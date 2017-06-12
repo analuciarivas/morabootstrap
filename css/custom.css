@@ -84,17 +84,18 @@ a {
 .navbar {
 	margin-bottom: 0;
 	padding-bottom: 0;
-	background-color: #DCDCDC;
-	border-color: #DCDCDC;
+	background-color: #696969;
+	border-color: #696969;
 }
 
 .navbar-brand img {
 	width: 10%;
   border-radius: 4px;
-	margin:0;
-	text-align: center;
 }
 
+.navbar-inverse .navbar-nav>li>a {
+	color: #dcdcdc;
+}
 /* Parallax
 =======================*/
 .parllax-content {
@@ -149,3 +150,31 @@ a {
 
 /* Productos
 =========================*/
+
+
+.formulario {
+	margin-bottom: 12px;
+	/*text-align: center;*/
+	font-family:"Oswald","Helvetica Neue",Arial,sans-serif;
+	text-transform: uppercase;
+}
+
+/* footer
+=========================*/
+footer ul {
+	padding-left: 0;
+}
+
+footer li {
+	list-style-type: none;
+}
+
+.footersocial li {
+	float: left;
+	margin-right: 20px;
+}
+
+.footersocial li a {
+	font-size:30px;
+	color:#696969;
+}
