@@ -1,21 +1,21 @@
   <!-- comienza el navbar -->
 
-<?php 
+<?php
 
-include_once("funciones.php");
+require_once("soporte.php");
 
-$usuarioLogueado = usuarioLogueado();
+$usuarioLogueado = $auth->usuarioLogueado($db);
 
 if ($usuarioLogueado == NULL) {
-      $logout = "<a href='login.php'>Mi Cuenta</a>";
+      $logout = "<a href='logout.php'>Logout <i class='glyphicon glyphicon-log-out'></i></a>";
     } else {
-      $logout = "<a href='logout.php'>logout <i class='glyphicon glyphicon-log-out'></i></a>";
+      $logout = "<a href='logout.php'>Logout <i class='glyphicon glyphicon-log-out'></i></a>";
     }
  ?>
 
  <!-- fin de banner promociones sobre el footer -->
 
-  
+
   <!-- aca comienza banner promociones sobre el footer -->
 
   <div class="info-bar">
@@ -68,4 +68,3 @@ if ($usuarioLogueado == NULL) {
   <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="path/to/instafeed.min.js"></script>
   <!-- end of jQuery -->
-

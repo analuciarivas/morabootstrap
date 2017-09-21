@@ -1,8 +1,7 @@
-<?php 
+<?php
+require_once("soporte.php");
 
-include_once("funciones.php");
-
-$usuarioLogueado = usuarioLogueado();
+$usuarioLogueado = $auth->usuarioLogueado($db);
 
   if ($usuarioLogueado == NULL) {
       $cuenta = "login.php";

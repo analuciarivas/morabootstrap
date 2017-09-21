@@ -1,21 +1,16 @@
 <?php
-    include_once("funciones.php");
-
+    require_once("soporte.php");
 
 
     if (isset($_GET["success"])) {
       $saludo = "Gracias por registrarte,";
     }
-    else {
-      $saludo = "Hola";
-    }
-  
-    $usuarioLogueado = usuarioLogueado();
 
-    if ($usuarioLogueado == NULL) {
+    $usuarioLogueado = $auth->usuarioLogueado($db);
+
+    if ($usuarioLogueado == null) {
      header("registro.php");exit;
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -40,12 +35,12 @@
     <div class="col-xs-12 col-sm-6 col-md-8 col-md-8 col-md-offset-2">
       <div class="well well-sm">
         <div class="row">
-          
+
           <!-- Foto de usuario -->
           <div class="col-sm-6 col-md-4">
             <img src="img/icon-01.jpg" width="300px" alt="" class="img-rounded img-responsive" />
           </div>
-          
+
           <!-- Datos de usuario -->
           <div class="col-sm-6 col-md-8">
             <h4><?=$usuarioLogueado["nombre"]?> <?=$usuarioLogueado["apellido"]?></h4>
@@ -56,8 +51,8 @@
               <i class="glyphicon glyphicon-gift"> </i><?=$usuarioLogueado["edad"]?>
             </p>
             <!-- fpp button -->
-            
-            
+
+
             <!-- seach button -->
 
             <p>Ver productos para</p>

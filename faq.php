@@ -1,5 +1,5 @@
 <?php
-    include("funciones.php");
+  require_once("soporte.php");
 ?>
 
 <!DOCTYPE html>

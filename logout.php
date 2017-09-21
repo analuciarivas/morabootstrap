@@ -1,7 +1,7 @@
-<?php 
+<?php
 
-include_once("funciones.php");
-logout();
+require_once("soporte.php");
+$auth->logout();
 header("Location:index.php");exit;
 
 

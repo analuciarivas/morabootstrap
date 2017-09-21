@@ -1,5 +1,5 @@
 <?php
-    include_once("funciones.php");
+    require_once("soporte.php");
 
 ?>
 
@@ -14,7 +14,7 @@
 <body>
   <?php include("header.php");  ?>
 
-  
+
 
   <!-- aca va la imagen de arriba - hero element -->
   <div class="parallax-hero">
@@ -38,11 +38,11 @@
 
   <!-- estos son los productos destacados -->
   <div class="main container">
-  	
+
 
     <div class="row">
     <hr class="hr--underline">
-    
+
     <div class="home-subtitle">
        <h4>los imprescindibles</h4>
             <div class="col-sm-4">
@@ -113,4 +113,3 @@
   <?php include("footer.php"); ?>
 </body>
 </html>
-
