@@ -9,12 +9,8 @@
   include("head.php");
   ?>
 
-
-
 <body>
   <?php include("header.php");  ?>
-
-
 
   <!-- aca va la imagen de arriba - hero element -->
   <div class="parallax-hero">

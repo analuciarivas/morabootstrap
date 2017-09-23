@@ -7,22 +7,22 @@ class DBMySQL extends DB {
   private $db;
 
   public function __construct() {
-    $dsn = 'mysql:host=localhost;dbname=moralogin;
-    charset=utf8mb4;port=3306';
-    $user ="root";
-    $pass = "root";
+      $dsn = 'mysql:host=localhost;dbname=moralogin;
+      charset=utf8mb4;port=3306';
+      $user ="root";
+      $pass = "root";
 
-    try {
-      $this->db = new PDO($dsn, $user, $pass);
-    } catch (Exception $e) {
-      echo "La conexion a la base de datos falló: " . $e->getMessage();
-    }
+        try {
+          $this->db = new PDO($dsn, $user, $pass);
+        } catch (Exception $e) {
+          echo "La conexion a la base de datos falló: " . $e->getMessage();
+        }
 
   }
 
   public function guardarUsuario(Usuario $usuario) {
 
-		$query = $this->db->prepare("Insert into usuarios values(default, :nombre, :apellido, :edad, :email, :password)");
+		$query = $this->db->prepare("Insert into moralogin.usuario values(default, :nombre, :apellido, :email, :password, :edad)");
 
     $query->bindValue(":nombre", $usuario->getNombre());
     $query->bindValue(":apellido", $usuario->getApellido());
@@ -40,7 +40,7 @@ class DBMySQL extends DB {
   }
 
   public function traerTodos() {
-		$query = $this->db->prepare("Select * from usuarios");
+		$query = $this->db->prepare("Select * from usuario");
 		$query->execute();
 
     $arrayFinal = [];
@@ -55,7 +55,7 @@ class DBMySQL extends DB {
   }
 
   public function traerPorMail($email) {
-		$query = $this->db->prepare("Select * from usuarios where email = :email");
+		$query = $this->db->prepare("Select * from moralogin.usuario where email = :email");
 		$query->bindValue(":email", $email);
 
 		$query->execute();

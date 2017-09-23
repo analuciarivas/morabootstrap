@@ -5,6 +5,8 @@
     if (isset($_GET["success"])) {
       $saludo = "Gracias por registrarte,";
     }
+    else {$saludo = "Hola ";
+    }
 
     $usuarioLogueado = $auth->usuarioLogueado($db);
 
@@ -25,7 +27,7 @@
 
   <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-8 col-md-8 col-md-offset-2">
-      <h2><?=$saludo?> <?=$usuarioLogueado["nombre"]?>!</h2>
+      <h2><?=$saludo?> <?=$usuarioLogueado->getNombre($db)?>!</h2>
     <p></p>
   </div>
 
@@ -43,12 +45,12 @@
 
           <!-- Datos de usuario -->
           <div class="col-sm-6 col-md-8">
-            <h4><?=$usuarioLogueado["nombre"]?> <?=$usuarioLogueado["apellido"]?></h4>
+            <h4><?=$usuarioLogueado->getNombre($db)?> <?=$usuarioLogueado->getApellido($db)?></h4>
 
             <p>
-              <i class="glyphicon glyphicon-envelope"></i> <?=$usuarioLogueado["email"]?>
+              <i class="glyphicon glyphicon-envelope"></i> <?=$usuarioLogueado->getEmail($db)?>
               <br />
-              <i class="glyphicon glyphicon-gift"> </i><?=$usuarioLogueado["edad"]?>
+              <i class="glyphicon glyphicon-gift"> </i><?=$usuarioLogueado->getEdad($db)?>
             </p>
             <!-- fpp button -->
 
