@@ -54,7 +54,6 @@ class Validador {
   			$informacion[$clave] = trim($valor);
   		}
 
-
   		if ($informacion["email"] == "") {
   			$errores["email"] = "El mail está incompleto";
   		}
@@ -73,7 +72,7 @@ class Validador {
       else if ($usuario != NULL) {
   			//El usuario existe y puso contraseña
   			// Tengo que validar que la contraseño que ingreso sea valida
-  		    if (password_verify($informacion["password"], $usuario["password"]) == false) {
+  		    if (password_verify($informacion["password"], $usuario->getPassword()) == false) {
   				$errores["password"] = "La contraseña no verifica";
   			}
   		}
